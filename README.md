@@ -1,4 +1,4 @@
-# pls-lottery
+# Practical Learning Series Lottery
 **What:** a decentralized “lottery” where participants “buy” an entry ticket using PLS tokens
 
 - This will be a multi-week session that walks through the end-to-end process
