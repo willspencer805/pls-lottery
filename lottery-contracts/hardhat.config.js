@@ -8,7 +8,8 @@ require("dotenv").config();
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-const PRIVATE_KEY = process.env.PRIVATE_KEY || "0xkey";
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "url";
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_KEY || "key";
 
 module.exports = {
