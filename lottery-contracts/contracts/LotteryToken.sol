@@ -10,23 +10,43 @@ contract LotteryToken is ERC721, Ownable {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
-    
-    PLS public immutable plsToken; 
-    uint256 public constant TICKET_COST = 10;
 
-    constructor(string memory tokenName, string memory tokenSymbol, address _plsToken) ERC721(tokenName, tokenSymbol) {
+    PLS public immutable plsToken;
+    uint256 public constant TICKET_COST = 10;
+    bool public entryActive = false;
+
+    constructor(
+        string memory tokenName,
+        string memory tokenSymbol,
+        address _plsToken
+    ) ERC721(tokenName, tokenSymbol) {
         plsToken = PLS(_plsToken);
     }
 
+    function _baseURI() internal view virtual override returns (string memory) {
+        return "testURI";
+    }
+
+    // function setBaseURI(string memory newURI) public onlyOwner {}
+
+    function changeEntryStatus() public onlyOwner {
+        entryActive = !entryActive;
+    }
+
     function buyTickets(uint256 numberToBuy) public {
+        require(entryActive, "Can't enter yet!");
         uint256 totalTransfer = numberToBuy * TICKET_COST;
-        bool success = plsToken.transferFrom(msg.sender, address(this), totalTransfer);
+        bool success = plsToken.transferFrom(
+            msg.sender,
+            address(this),
+            totalTransfer
+        );
 
         if (success) {
-            for(uint64 i = 0; i < numberToBuy; i++) {
+            for (uint64 i = 0; i < numberToBuy; i++) {
                 uint256 tokenId = _tokenIdCounter.current();
                 _tokenIdCounter.increment();
-                _safeMint(msg.sender, tokenId); 
+                _safeMint(msg.sender, tokenId);
             }
         }
     }
