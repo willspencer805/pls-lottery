@@ -11,7 +11,7 @@ contract PLS is ERC20, Ownable {
     uint256 public constant tokensPerEth = 100;
 
     constructor(string memory tokenName, string memory tokenSymbol, uint256 initialAmount) ERC20(tokenName, tokenSymbol) {
-        _mint(msg.sender, initialAmount);
+        // _mint(msg.sender, initialAmount);
     }
 
     /**
