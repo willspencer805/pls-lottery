@@ -32,22 +32,4 @@ contract PLS is ERC20, Ownable {
     (bool sent,) = msg.sender.call{value: balanceToTransfer}("");
     require(sent, "Failed to send user balance back to the user");
   }
-
-  // ToDo: create a sellTokens(uint256 _amount) function:
-  function sellTokens(uint256 _amount) public  {
-    approveTokens(_amount);
-
-    if(transferFrom(msg.sender, address(this), _amount)) {
-      uint256 balanceToTransfer = _amount / tokensPerEth; 
-      (bool sent,) = msg.sender.call{value: balanceToTransfer}("");
-      require(sent, "Failed to send user balance back to the user");
-      emit SellTokens(msg.sender, balanceToTransfer, _amount);
-    }
-  }
-
-  function approveTokens(uint256 _amount) public {
-    // approve tokens to be spent by vendor contract
-    bool success = approve(address(this), _amount);
-    require(success, "Failed to approve transfer");
-  }
 }
