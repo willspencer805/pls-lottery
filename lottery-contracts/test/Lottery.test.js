@@ -19,11 +19,24 @@ describe("LotteryToken Unit Tests", function () {
   describe("token purchase", function () {
     it("transfer the right amount of tokens", async function () {
       const amount = ethers.utils.parseEther("1000000000");
+      await lottery.changeEntryStatus();
       await pls.buyTokens({ value: 1 });
       await pls.approve(lottery.address, amount);
       await lottery.buyTickets(10);
       balanceAfter = await lottery.balanceOf(deployer);
       assert.equal(balanceAfter.toString(), "10");
+    });
+  });
+
+  describe("contract activity", function () {
+    it("doesn't allow mint outside claim period", async function () {
+      await expect(lottery.buyTickets(10)).to.be.reverted;
+    });
+
+    it("flips state", async function () {
+      assert(!(await lottery.entryActive()));
+      await lottery.changeEntryStatus();
+      assert(await lottery.entryActive());
     });
   });
 });
