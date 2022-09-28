@@ -15,8 +15,7 @@
 **How:** 
 
 1. ERC20 contract
-    1. participants can exchange test ether for tokens 
-        1. let’s us collect test eth from a bunch of different accounts
+    1. participants can exchange test ether for tokens
 2. ERC721 contract
     1. participants can exchange PLS tokens for entry tickets
         1. unlimited entries per wallet
