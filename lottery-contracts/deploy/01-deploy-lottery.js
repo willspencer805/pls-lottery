@@ -1,3 +1,4 @@
+const { ethers } = require("hardhat");
 const {
   developmentChains,
   networkConfig,
@@ -8,17 +9,17 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
   const { deployer } = await getNamedAccounts();
   const chainId = network.config.chainId;
   log("Local network detected. Deploying contracts...");
-  const tokenName = networkConfig[chainId]["tokenName"];
-  const tokenSymbol = networkConfig[chainId]["tokenSymbol"];
-  const initialAmount = networkConfig[chainId]["initialAmount"];
+  const tokenName = "";
+  const tokenSymbol = "";
+  const deployedAddress = await ethers.getContract("PLS");
 
-  await deploy("PLS", {
+  await deploy("LotteryToken", {
     from: deployer,
     log: true,
-    args: [tokenName, tokenSymbol, initialAmount],
+    args: [tokenName, tokenSymbol, deployedAddress.address],
   });
-  log("PLS contract deployed!");
+  log("Lottery token contract deployed!");
   log("---------------------------------------------------------");
 };
 
-module.exports.tags = ["all", "pls"];
+module.exports.tags = ["all", "lottery"];
