@@ -1,5 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
-// require("@nomiclabs/hardhat-etherscan");
+require("@nomiclabs/hardhat-etherscan");
 require("hardhat-deploy");
 require("solidity-coverage");
 require("hardhat-gas-reporter");
@@ -10,7 +10,7 @@ require("dotenv").config();
  */
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "url";
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_KEY || "key";
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "key";
 
 module.exports = {
   defaultNetwork: "hardhat",

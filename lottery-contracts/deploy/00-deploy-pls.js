@@ -7,15 +7,14 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
   const chainId = network.config.chainId;
-  log("Local network detected. Deploying contracts...");
+  log("Deploying contracts...");
   const tokenName = networkConfig[chainId]["tokenName"];
   const tokenSymbol = networkConfig[chainId]["tokenSymbol"];
-  const initialAmount = networkConfig[chainId]["initialAmount"];
 
   await deploy("PLS", {
     from: deployer,
     log: true,
-    args: [tokenName, tokenSymbol, initialAmount],
+    args: [tokenName, tokenSymbol],
   });
   log("PLS contract deployed!");
   log("---------------------------------------------------------");
