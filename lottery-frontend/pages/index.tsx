@@ -31,7 +31,7 @@ const Home: NextPage = () => {
             <p>Get some Goerli test Eth to participate!</p>
           </a>
         </div> */}
-        <Amount></Amount>
+        <Amount />
         <Faqs />
       </main>
 

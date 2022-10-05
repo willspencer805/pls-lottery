@@ -5,8 +5,8 @@ import { ethers } from "ethers";
 
 export default function Amount() {
   const [value, setValue] = useState("0");
-  const handleChange = (event: number) => {
-    setValue(event.target.value / 100);
+  const handleChange = (event: any) => {
+    setValue((event.target.value / 100).toString());
   };
 
   const { config } = usePrepareContractWrite({
