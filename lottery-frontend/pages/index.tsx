@@ -4,6 +4,7 @@ import Head from "next/head";
 import Faqs from "../components/Faqs";
 import Amount from "../components/Amount";
 import styles from "../styles/Home.module.css";
+import SubmitButton from "../components/SubmitButton";
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +12,9 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <ConnectButton />
 
-        <h1 className={styles.title}>Welcome to the PLS Lottery</h1>
+        <h1 className="text-3xl font-extrabold text-gray-900 justify-center sm:flex">
+          Welcome to the PLS Lottery
+        </h1>
 
         <p className={styles.description}>
           Get started by purchasing some entry tokens

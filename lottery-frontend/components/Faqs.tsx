@@ -11,13 +11,17 @@ const faqs = [
     question: "How do I enter?",
     answer: "",
   },
+  {
+    question: "How do I add PLSC to my wallet?",
+    answer: "",
+  },
 ];
 
 export default function Faqs() {
   return (
     <div className="bg-white" id="faq">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
-        <div className="lg:grid lg:grid-cols-3 lg:gap-8">
+      <div className="flex justify-center max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+        <div className="flex justify-center lg:grid lg:grid-cols-4 lg:gap-8">
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900">
               Frequently asked questions
