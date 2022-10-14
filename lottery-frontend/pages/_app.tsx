@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import '@rainbow-me/rainbowkit/styles.css'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import {
   RainbowKitProvider,
   getDefaultWallets,
@@ -36,20 +37,25 @@ const wagmiClient = createClient({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider
-        chains={chains}
-        coolMode
-        theme={lightTheme({
-          overlayBlur: 'large',
-          accentColor: 'rgb(13 148 136)',
-        })}
-      >
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </RainbowKitProvider>
-    </WagmiConfig>
+    <>
+      <Head>
+        <title>PLS Lottery</title>
+      </Head>
+      <WagmiConfig client={wagmiClient}>
+        <RainbowKitProvider
+          chains={chains}
+          coolMode
+          theme={lightTheme({
+            overlayBlur: 'large',
+            accentColor: 'rgb(13 148 136)',
+          })}
+        >
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </>
   )
 }
 
