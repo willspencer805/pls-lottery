@@ -1,8 +1,26 @@
 import Link from 'next/link'
 
 export default function Welcome() {
-  function onClick() {
-    console.log('click')
+  async function onClick() {
+    const provider = window.ethereum
+
+    if (provider) {
+      try {
+        const wasAdded = await provider.request({
+          method: 'wallet_watchAsset',
+          params: {
+            type: 'ERC20',
+            options: {
+              address: '0xF80B284285B8Fa0DE7E7808994184Aa2000fb874',
+              symbol: 'PLSC',
+              decimals: 18,
+            },
+          },
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    }
   }
 
   return (
