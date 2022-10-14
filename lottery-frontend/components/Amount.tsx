@@ -46,7 +46,7 @@ export default function Amount() {
                 onChange={handleChange}
                 name="price"
                 id="price"
-                className="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                className="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-teal-500 focus:ring-teal-500 sm:text-sm"
                 placeholder={data ? data.formatted.substring(0, 4) : '0.0'}
               />
             </div>
@@ -57,7 +57,7 @@ export default function Amount() {
               <br></br>
               <br></br>
               PLS to Receive:{' '}
-              <b className="text-sm font-medium text-indigo-700 items-center">
+              <b className="text-sm font-medium text-teal-700 items-center">
                 {(value as unknown as number) * 100}
               </b>
             </label>
@@ -86,7 +86,7 @@ export default function Amount() {
 //           onChange={handleChange}
 //           name="price"
 //           id="price"
-//           className="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+//           className="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-teal-500 focus:ring-teal-500 sm:text-sm"
 //           placeholder={data ? data.formatted.substring(0, 4) : '0.0'}
 //         />
 //       </div>
