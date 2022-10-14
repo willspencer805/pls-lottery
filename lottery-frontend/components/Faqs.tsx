@@ -37,7 +37,7 @@ export default function Faqs() {
                   >
                     Goerli Faucet
                   </a>{' '}
-                  to get some test Ether to get started. If you don`&apos`t
+                  to get some test Ether to get started. If you don&apos;t
                   remember how to use the faucet, check out the video explaining
                   them <a>here!</a>
                 </dd>
