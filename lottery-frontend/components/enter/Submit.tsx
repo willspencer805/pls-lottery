@@ -12,7 +12,7 @@ export default function Submit({
   isApproved: Boolean
 }) {
   const { config } = usePrepareContractWrite({
-    addressOrName: process.env.NEXT_PUBLIC_TOKEN_CONTRACT as string,
+    addressOrName: '0x71893F19cd598653d042d4601c38e01Cc968a4DB',
     contractInterface: abi721,
     functionName: 'buyTickets',
     args: (amount as unknown as number) / entryPrice,

@@ -25,10 +25,10 @@ export default function SubmitButton({
   const { address, isConnecting, isDisconnected } = useAccount()
 
   var { data, isError, isLoading } = useContractRead({
-    addressOrName: process.env.NEXT_PUBLIC_PLS_CONTRACT as string,
+    addressOrName: '0xF80B284285B8Fa0DE7E7808994184Aa2000fb874',
     contractInterface: abi,
     functionName: 'allowance',
-    args: [address, process.env.NEXT_PUBLIC_TOKEN_CONTRACT],
+    args: [address, '0x71893F19cd598653d042d4601c38e01Cc968a4DB'],
     chainId: 5,
     onSuccess(data: any) {
       setAllowance(data.toString())
@@ -46,10 +46,10 @@ export default function SubmitButton({
   }, [amountToApprove, approved, allowance])
 
   const { config } = usePrepareContractWrite({
-    addressOrName: process.env.NEXT_PUBLIC_PLS_CONTRACT as string,
+    addressOrName: '0xF80B284285B8Fa0DE7E7808994184Aa2000fb874',
     contractInterface: abi,
     functionName: 'approve',
-    args: [process.env.NEXT_PUBLIC_TOKEN_CONTRACT, bigAssNumber],
+    args: ['0x71893F19cd598653d042d4601c38e01Cc968a4DB', bigAssNumber],
     chainId: 5,
   })
   const contractWrite = useContractWrite({

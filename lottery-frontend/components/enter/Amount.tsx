@@ -18,7 +18,7 @@ export default function Amount() {
 
   const { address, isConnecting, isDisconnected } = useAccount()
   const { data, isError, isLoading } = useContractRead({
-    addressOrName: process.env.NEXT_PUBLIC_PLS_CONTRACT as string,
+    addressOrName: '0xF80B284285B8Fa0DE7E7808994184Aa2000fb874',
     contractInterface: abi,
     functionName: 'balanceOf',
     args: address,

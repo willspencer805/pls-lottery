@@ -7,7 +7,7 @@ import { useState } from 'react'
 export default function Ticket() {
   const [supply, setSupply] = useState('0')
   const contractRead = useContractRead({
-    addressOrName: process.env.NEXT_PUBLIC_TOKEN_CONTRACT as string,
+    addressOrName: '0x71893F19cd598653d042d4601c38e01Cc968a4DB',
     contractInterface: abi721,
     functionName: 'totalSupply',
     chainId: 5,
