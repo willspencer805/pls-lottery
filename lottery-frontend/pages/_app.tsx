@@ -17,7 +17,8 @@ const { chains, provider, webSocketProvider } = configureChains(
   [chain.goerli],
   [
     alchemyProvider({
-      apiKey: nextConfig.ALCHEMY_KEY,
+      // apiKey: nextConfig.ALCHEMY_KEY,
+      apiKey: 'c88lErNVv5yUhhzQ9r-mTG6IoSp0zfPv',
     }),
     publicProvider(),
   ]
@@ -40,6 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>PLS Lottery</title>
+        <link rel="icon" href="/logo.png" />
       </Head>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider

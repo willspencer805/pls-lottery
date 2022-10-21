@@ -1,5 +1,5 @@
 import { useContractWrite, usePrepareContractWrite, useBalance } from 'wagmi'
-import { abi } from '../utils/abi.js'
+import { abi } from '../../utils/abi.js'
 import { ethers } from 'ethers'
 import './Amount.tsx'
 

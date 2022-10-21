@@ -1,16 +1,6 @@
-import {
-  HeartIcon,
-  AcademicCapIcon,
-  ShoppingCartIcon,
-  TrendingUpIcon,
-} from '@heroicons/react/outline'
+import { AcademicCapIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 
 const features = [
-  // {
-  //   name: 'Learning',
-  //   description: 'Get an opportunity to learn dApp infrastruc',
-  //   icon: AcademicCapIcon,
-  // },
   {
     name: 'Learning',
     description: `Don't just watch others have all the fun making transactions. Get hands-on experience with no money at stake.`,
