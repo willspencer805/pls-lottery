@@ -1,16 +1,16 @@
-require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-etherscan");
-require("hardhat-deploy");
-require("solidity-coverage");
-require("hardhat-gas-reporter");
-require("dotenv").config();
+require("@nomiclabs/hardhat-waffle")
+require("@nomiclabs/hardhat-etherscan")
+require("hardhat-deploy")
+// require("solidity-coverage")
+// require("hardhat-gas-reporter");
+require("dotenv").config()
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "url";
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "key";
+const PRIVATE_KEY = process.env.PRIVATE_KEY
+const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "url"
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "key"
 
 module.exports = {
   defaultNetwork: "hardhat",
@@ -65,9 +65,12 @@ module.exports = {
       {
         version: "0.8.1",
       },
+      {
+        version: "0.8.4",
+      },
     ],
   },
   mocha: {
     timeout: 500000, // 500 seconds max for running tests
   },
-};
+}
